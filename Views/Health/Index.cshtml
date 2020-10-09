@@ -1,0 +1,14 @@
+﻿@model DotNetCoreSqlDb.Models.HealthStatus
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{ ViewData["Title"] = "Health Status"; }
+
+<div>
+    <h4>Current Web App Region</h4>
+    <p>@Configuration.GetSection("AzureRegion")["Region"]</p>
+</div>
+<div>
+    <h4>Current Database</h4>
+    <p>@Model.DbServerName</p>
+</div>
